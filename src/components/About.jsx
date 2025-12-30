@@ -59,9 +59,6 @@ function About() {
 Java Intern, Coding Thinker, 08th July 2024 to 24th July 2024. Completed an intensive program covering Java syntax, data structures, and file handling. Developed projects using object-oriented programming (OOP) and exception handling. Student Trainee, IES College of Technology, Bhopal, July 2024. Applied theoretical CSE knowledge to practical Java programming and project development. Java Developer, Coding Thinker Project, 2024. Focused on building core programming logic and implementing robust exception handling for software reliability. </span>
         <br />
         <br />
-        <h1 className="text-green-600 font-semibold text-xl">
-          Achievements & Awards
-        </h1>
         <br />
         <br />
         <h1 className="text-green-600 font-semibold text-xl">
