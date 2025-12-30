@@ -1,30 +1,5 @@
-import axios from "axios";
-import React from "react";
-import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
 
 function Contact() {
-  const {
-    register,
-    handleSubmit,
-
-    formState: { errors },
-  } = useForm();
-
-  const onSubmit = async (data) => {
-    const userInfo = {
-      name: data.name,
-      email: data.email,
-      message: data.message,
-    };
-    try {
-      await axios.post("https://getform.io/f/raeqjora", userInfo);
-      toast.success("Your message has been sent");
-    } catch (error) {
-      console.log(error);
-      toast.error("Something went wrong");
-    }
-  };
   return (
     <>
       <div
@@ -33,53 +8,57 @@ function Contact() {
       >
         <h1 className="text-3xl font-bold mb-4">Contact me</h1>
         <span>Please fill out the form below to contact me</span>
-        <div className=" flex flex-col items-center justify-center mt-5">
+
+        <div className="flex flex-col items-center justify-center mt-6">
           <form
-            onSubmit={handleSubmit(onSubmit)}
-            // action="https://getform.io/f/raeqjora"
-            // method="POST"
+            action="https://getform.io/f/aroxnleb"
+            method="POST"
             className="bg-slate-200 w-96 px-8 py-6 rounded-xl"
           >
-            <h1 className="text-xl font-semibold mb-4">Send Your Message</h1>
+            <h1 className="text-xl font-semibold mb-4">
+              Send the Message
+            </h1>
+
+            {/* Full Name */}
             <div className="flex flex-col mb-4">
-              <label className="block text-gray-700">FullName</label>
+              <label className="text-gray-700">Full Name</label>
               <input
-                {...register("name", { required: true })}
-                className="shadow rounded-lg appearance-none border  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="name"
+                className="shadow rounded-lg border w-full py-2 px-3 text-gray-700 focus:outline-none"
+                type="text"
                 name="name"
-                type="text"
-                placeholder="Enter your fullname"
+                placeholder="Enter your full name"
+                required
               />
-              {errors.name && <span>This field is required</span>}
             </div>
+
+            {/* Email */}
             <div className="flex flex-col mb-4">
-              <label className="block text-gray-700">Email Address</label>
+              <label className="text-gray-700">Email Address</label>
               <input
-                {...register("email", { required: true })}
-                className="shadow rounded-lg appearance-none border  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="email"
+                className="shadow rounded-lg border w-full py-2 px-3 text-gray-700 focus:outline-none"
+                type="email"
                 name="email"
-                type="text"
                 placeholder="Enter your email address"
+                required
               />
-              {errors.email && <span>This field is required</span>}
             </div>
+
+            {/* Message */}
             <div className="flex flex-col mb-4">
-              <label className="block text-gray-700">Message</label>
+              <label className="text-gray-700">Message</label>
               <textarea
-                {...register("message", { required: true })}
-                className="shadow rounded-lg appearance-none border  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="message"
+                className="shadow rounded-lg border w-full py-2 px-3 text-gray-700 focus:outline-none"
                 name="message"
-                type="text"
-                placeholder="Enter your Query"
-              />
-              {errors.message && <span>This field is required</span>}
+                placeholder="Type your query"
+                rows="4"
+                required
+              ></textarea>
             </div>
+
+            {/* Button */}
             <button
               type="submit"
-              className="bg-black text-white rounded-xl px-3 py-2 hover:bg-slate-700 duration-300"
+              className="bg-black text-white rounded-xl px-4 py-2 hover:bg-slate-700 duration-200"
             >
               Send
             </button>
