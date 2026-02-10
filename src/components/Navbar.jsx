@@ -36,7 +36,14 @@ function Navbar() {
           />
           <div>
             <h1 className="text-xl font-bold">Avinash Kumar</h1>
-            <p className="text-sm text-gray-200">Web Developer</p>
+            {/* <p className="text-sm text-gray-200">Web Developer</p> */}
+             <ReactTyped
+              className="text-purple-600 font-bold"
+              strings={["Developer", "Programmer", "Coder"]}
+              typeSpeed={40}
+              backSpeed={50}
+              loop={true}
+            />
           </div>
         </div>
 
